@@ -38,6 +38,10 @@ app.get("/compose", (req, res) => {
   res.render("compose");
 })
 
+app.get("/posts/:post", (req, res) => {
+  console.log(req.params.post);
+})
+
 app.post("/compose", (req, res) => {
   const post = {
     "title": req.body.title,
