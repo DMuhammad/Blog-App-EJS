@@ -1,5 +1,7 @@
 <%- include("partials/header") -%> 
     <h1>Home</h1>
     <p><%= content %></p>
-    <%= console.log(post) %> 
+   <% for( let i = 0; i < post.length; i++ ) { %>
+        <%= console.log(post[i].title) %> 
+   <% } %>
 <%- include("partials/footer") %> 
