@@ -51,11 +51,11 @@ app.get("/compose", (req, res) => {
 })
 
 app.get("/posts/:post", (req, res) => {
-  posts.forEach(e => {
-    if(_.lowerCase(req.params.post) === _.lowerCase(e.title)){
+  Content.findById(req.params.post, (err, result) => {
+    if(!err){
       res.render("post", {
-        title: e.title,
-        content: e.content
+        title: result.title,
+        content: result.content
       });
     }
   })
